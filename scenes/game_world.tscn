@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://o0j36srxjy86"]
+
+[ext_resource type="PackedScene" uid="uid://dqrok77spng11" path="res://scenes/player.tscn" id="1_47u71"]
+[ext_resource type="PackedScene" uid="uid://dd11vde02imou" path="res://scenes/enemy.tscn" id="2_ywgp6"]
+
+[node name="GameWorld" type="Node2D" unique_id=404435621]
+
+[node name="Player" parent="." unique_id=267862108 instance=ExtResource("1_47u71")]
+
+[node name="Enemy" parent="." unique_id=374857170 instance=ExtResource("2_ywgp6")]
+position = Vector2(130, 234)
+
+[node name="Enemy2" parent="." unique_id=842424572 instance=ExtResource("2_ywgp6")]
+position = Vector2(188, 435)
+
+[node name="Enemy3" parent="." unique_id=1010430996 instance=ExtResource("2_ywgp6")]
+position = Vector2(235, 285)
+
+[node name="Enemy4" parent="." unique_id=804668636 instance=ExtResource("2_ywgp6")]
+position = Vector2(154, 133)
