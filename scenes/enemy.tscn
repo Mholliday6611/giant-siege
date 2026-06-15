@@ -52,3 +52,4 @@ shape = SubResource("RectangleShape2D_c4w8v")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

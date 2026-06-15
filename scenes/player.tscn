@@ -13,7 +13,7 @@ size = Vector2(360, 50)
 [node name="Player" type="Node2D" unique_id=267862108]
 script = ExtResource("1_3vyb7")
 
-[node name="HurtBox" type="Area2D" parent="." unique_id=1103940188 node_paths=PackedStringArray("health_component")]
+[node name="HurtBox" type="Area2D" parent="." unique_id=1103940188 node_paths=PackedStringArray("health_component") groups=["base"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_qhqgy")
