@@ -30,7 +30,6 @@ size_flags_horizontal = 4
 color = Color(1, 0.15294118, 0.043137256, 1)
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1983497299 node_paths=PackedStringArray("health_component")]
-collision_mask = 2
 script = ExtResource("1_7p1mj")
 health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://dxftpm8o6ya47"
@@ -43,6 +42,7 @@ script = ExtResource("3_5uy6h")
 metadata/_custom_type_script = "uid://yutairqi0jer"
 
 [node name="HitBox" type="Area2D" parent="." unique_id=744792511]
+collision_layer = 2
 collision_mask = 2
 script = ExtResource("4_5uy6h")
 metadata/_custom_type_script = "uid://dhbhnbkoe12iy"
