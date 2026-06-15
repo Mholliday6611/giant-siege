@@ -3,8 +3,12 @@
 [ext_resource type="Script" uid="uid://ci07yxbefsswt" path="res://scripts/enemy.gd" id="1_4ra3w"]
 [ext_resource type="Script" uid="uid://dxftpm8o6ya47" path="res://scripts/classes/hurtbox.gd" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://yutairqi0jer" path="res://scripts/components/health_component.gd" id="3_5uy6h"]
+[ext_resource type="Script" uid="uid://dhbhnbkoe12iy" path="res://scripts/classes/hitbox.gd" id="4_5uy6h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4w8v"]
 size = Vector2(32, 32)
 
 [node name="Enemy" type="Node2D" unique_id=374857170]
@@ -26,6 +30,7 @@ size_flags_horizontal = 4
 color = Color(1, 0.15294118, 0.043137256, 1)
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1983497299 node_paths=PackedStringArray("health_component")]
+collision_mask = 2
 script = ExtResource("1_7p1mj")
 health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://dxftpm8o6ya47"
@@ -37,4 +42,13 @@ shape = SubResource("RectangleShape2D_md0e3")
 script = ExtResource("3_5uy6h")
 metadata/_custom_type_script = "uid://yutairqi0jer"
 
+[node name="HitBox" type="Area2D" parent="." unique_id=744792511]
+collision_mask = 2
+script = ExtResource("4_5uy6h")
+metadata/_custom_type_script = "uid://dhbhnbkoe12iy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1019085690]
+shape = SubResource("RectangleShape2D_c4w8v")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

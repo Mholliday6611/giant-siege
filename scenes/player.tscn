@@ -1,6 +1,40 @@
 [gd_scene format=3 uid="uid://dqrok77spng11"]
 
 [ext_resource type="Script" uid="uid://cqk7ax3ht10by" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dxftpm8o6ya47" path="res://scripts/classes/hurtbox.gd" id="2_qhqgy"]
+[ext_resource type="Script" uid="uid://yutairqi0jer" path="res://scripts/components/health_component.gd" id="3_dqkch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
+size = Vector2(360, 50)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qhqgy"]
+size = Vector2(360, 50)
 
 [node name="Player" type="Node2D" unique_id=267862108]
 script = ExtResource("1_3vyb7")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1103940188 node_paths=PackedStringArray("health_component")]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_qhqgy")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://dxftpm8o6ya47"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1669888046]
+shape = SubResource("RectangleShape2D_qlg0r")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=911432742]
+script = ExtResource("3_dqkch")
+health = 100
+metadata/_custom_type_script = "uid://yutairqi0jer"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1324456665]
+texture = SubResource("PlaceholderTexture2D_qhqgy")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2116634222]
+offset_left = -101.0
+offset_top = -5.0
+offset_right = 99.0
+offset_bottom = 22.0
+
+[connection signal="damage_received" from="HealthComponent" to="." method="_on_health_component_damage_received"]
