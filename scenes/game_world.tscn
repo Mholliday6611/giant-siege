@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://o0j36srxjy86"]
 
 [ext_resource type="PackedScene" uid="uid://dqrok77spng11" path="res://scenes/player.tscn" id="1_47u71"]
+[ext_resource type="Script" uid="uid://ul77pyca3bmt" path="res://scenes/game_world.gd" id="1_ywgp6"]
 [ext_resource type="PackedScene" uid="uid://e27ubdi7p8sy" path="res://scenes/enemy_spawner.tscn" id="2_47u71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywgp6"]
 size = Vector2(250, 60)
 
 [node name="GameWorld" type="Node2D" unique_id=404435621]
+script = ExtResource("1_ywgp6")
 
 [node name="EnemySpawner" parent="." unique_id=1484531503 instance=ExtResource("2_47u71")]
 
@@ -16,3 +18,22 @@ shape = SubResource("RectangleShape2D_ywgp6")
 
 [node name="Player" parent="." unique_id=267862108 instance=ExtResource("1_47u71")]
 position = Vector2(180, 614)
+
+[node name="GamveOverUI" type="CenterContainer" parent="." unique_id=2145562434]
+process_mode = 2
+visible = false
+offset_right = 360.0
+offset_bottom = 640.0
+size_flags_vertical = 4
+
+[node name="GameOver" type="RichTextLabel" parent="GamveOverUI" unique_id=1199192069]
+z_index = 100
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+text = "Game Over Try Again!"
+
+[node name="Button" type="Button" parent="GamveOverUI" unique_id=2140549089]
+layout_mode = 2
+text = "Reset Game"
+
+[connection signal="pressed" from="GamveOverUI/Button" to="." method="_on_button_pressed"]

@@ -38,3 +38,4 @@ offset_right = 99.0
 offset_bottom = 22.0
 
 [connection signal="damage_received" from="HealthComponent" to="." method="_on_health_component_damage_received"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

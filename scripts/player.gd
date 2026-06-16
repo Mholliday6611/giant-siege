@@ -29,3 +29,9 @@ func attack_handler() -> void:
 func _on_health_component_damage_received() -> void:
 	print("Hit")
 	progress_bar.value = health_component.health
+
+
+func _on_health_component_died() -> void:
+	print("Hit")
+	progress_bar.value = health_component.health
+	GameManager.handle_gameover()
