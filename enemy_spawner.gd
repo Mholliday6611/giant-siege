@@ -26,10 +26,12 @@ func spawn_enemy():
 	print(spawn_pos)
 	# 3. Instantiate and place the enemy
 	var enemy_instance = enemy_scene.instantiate()
+	var enemy_speed = randi_range(1,8)
+	enemy_instance.SPEED = enemy_speed
 	enemy_instance.global_position = spawn_pos
 	# Add to scene (use call_deferred if spawning during physics processing)
 	get_parent().add_child(enemy_instance)
-	var delay = randf_range(1,2)
+	var delay = randf_range(.1,2)
 	await get_tree().create_timer(delay).timeout
 	should_spawn = true
 	

@@ -33,6 +33,7 @@ layout_mode = 2
 text = "Game Over Try Again!"
 
 [node name="Button" type="Button" parent="GamveOverUI" unique_id=2140549089]
+z_index = 100
 layout_mode = 2
 text = "Reset Game"
 
