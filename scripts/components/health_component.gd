@@ -7,9 +7,9 @@ signal died
 signal damage_received
 
 func take_damage(amount):
-	print("CALLED")
 	health -= amount
 	if health <= 0:
+		print("died")
 		died.emit()
 		return
 	damage_received.emit()

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cntr26ned3sjj"]
+
+[ext_resource type="PackedScene" uid="uid://dqrok77spng11" path="res://scenes/player.tscn" id="1_j8ivh"]
+[ext_resource type="PackedScene" uid="uid://tyefx43gyss4" path="res://scenes/citizen.tscn" id="2_nd71p"]
+
+[node name="Node2D" type="Node2D" unique_id=1746536746]
+
+[node name="Player" parent="." unique_id=267862108 instance=ExtResource("1_j8ivh")]
+position = Vector2(180, 618)
+
+[node name="Citizen" parent="." unique_id=1736395255 instance=ExtResource("2_nd71p")]
+position = Vector2(131, 351)
+
+[node name="Citizen2" parent="." unique_id=517236988 instance=ExtResource("2_nd71p")]
+position = Vector2(236, 240)
+
+[node name="Citizen3" parent="." unique_id=1599425944 instance=ExtResource("2_nd71p")]
+position = Vector2(226, 455)

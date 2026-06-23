@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bm5j1673dqqp3"]
+
+[ext_resource type="Script" uid="uid://cvyvem5j583wv" path="res://scripts/classes/wave.gd" id="1_jpu3k"]
+[ext_resource type="PackedScene" uid="uid://dd11vde02imou" path="res://scenes/enemy.tscn" id="2_mqc0x"]
+
+[sub_resource type="Curve2D" id="Curve2D_jpu3k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 8, 182)
+}
+point_count = 2
+
+[node name="Wave1" type="Node2D" unique_id=847375866]
+script = ExtResource("1_jpu3k")
+metadata/_custom_type_script = "uid://cvyvem5j583wv"
+
+[node name="Enemies" type="Node" parent="." unique_id=87890856]
+
+[node name="Path2D" type="Path2D" parent="Enemies" unique_id=1017175576]
+position = Vector2(32, -16)
+curve = SubResource("Curve2D_jpu3k")
+
+[node name="Enemy" parent="Enemies" unique_id=374857170 node_paths=PackedStringArray("path_node") instance=ExtResource("2_mqc0x")]
+position = Vector2(32, -16)
+SPEED = 1
+path_node = NodePath("../Path2D")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://o0j36srxjy86"]
 
 [ext_resource type="PackedScene" uid="uid://dqrok77spng11" path="res://scenes/player.tscn" id="1_47u71"]
-[ext_resource type="Script" uid="uid://ul77pyca3bmt" path="res://scenes/game_world.gd" id="1_ywgp6"]
+[ext_resource type="Script" uid="uid://ul77pyca3bmt" path="res://scripts/game_world.gd" id="1_ywgp6"]
 [ext_resource type="PackedScene" uid="uid://e27ubdi7p8sy" path="res://scenes/enemy_spawner.tscn" id="2_47u71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywgp6"]
@@ -11,6 +11,8 @@ size = Vector2(250, 60)
 script = ExtResource("1_ywgp6")
 
 [node name="EnemySpawner" parent="." unique_id=1484531503 instance=ExtResource("2_47u71")]
+position = Vector2(-1, 0)
+script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemySpawner" unique_id=1670503806]
 position = Vector2(197, 30)

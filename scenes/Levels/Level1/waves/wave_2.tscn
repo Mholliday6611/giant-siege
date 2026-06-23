@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cwt5uafv0hy4k"]
+
+[ext_resource type="PackedScene" uid="uid://dd11vde02imou" path="res://scenes/enemy.tscn" id="1_g7bnk"]
+[ext_resource type="Script" uid="uid://cvyvem5j583wv" path="res://scripts/classes/wave.gd" id="1_qmh8p"]
+
+[node name="Wave2" type="Node2D" unique_id=2136882068]
+script = ExtResource("1_qmh8p")
+metadata/_custom_type_script = "uid://cvyvem5j583wv"
+
+[node name="Enemies" type="Node" parent="." unique_id=2059945169]
+
+[node name="Enemy" parent="Enemies" unique_id=374857170 node_paths=PackedStringArray("path_node") instance=ExtResource("1_g7bnk")]
+position = Vector2(156, -15)
+SPEED = 1
+path_node = NodePath("")

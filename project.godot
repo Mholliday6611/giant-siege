@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GiantSiege"
-run/main_scene="uid://o0j36srxjy86"
+run/main_scene="uid://cxt6arccdlqoc"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
