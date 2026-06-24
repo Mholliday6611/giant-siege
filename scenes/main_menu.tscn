@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cxt6arccdlqoc"]
 
 [ext_resource type="Script" uid="uid://3ycte73e3ao4" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://c0dbg1addncgt" path="res://scripts/classes/multi_type_button.gd" id="2_ekxnf"]
 
 [node name="MainMenu" type="Node2D" unique_id=708451699]
 script = ExtResource("1_l6cm7")
@@ -27,14 +28,18 @@ grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="EndlessMode" type="Button" parent="Control/CenterContainer" unique_id=739413627]
+[node name="EndlessMode" type="Button" parent="Control/CenterContainer" unique_id=155010391]
 layout_mode = 2
 text = "Endless"
+script = ExtResource("2_ekxnf")
+metadata/_custom_type_script = "uid://c0dbg1addncgt"
 
-[node name="CampaignMode" type="Button" parent="Control/CenterContainer" unique_id=710151652]
+[node name="CampaignMode" type="Button" parent="Control/CenterContainer" unique_id=260835782]
 layout_mode = 2
 text = "Campaign
 "
+script = ExtResource("2_ekxnf")
+metadata/_custom_type_script = "uid://c0dbg1addncgt"
 
 [connection signal="pressed" from="Control/CenterContainer/EndlessMode" to="." method="_on_endless_mode_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/CampaignMode" to="." method="_on_campaign_mode_pressed"]
