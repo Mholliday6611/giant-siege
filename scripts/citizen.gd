@@ -9,8 +9,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if in_grab_mode:
-		global_position = get_global_mouse_position() - offset
+	pass
+	#if in_grab_mode:
+		#global_position = get_global_mouse_position() - offset
 
 func _on_grab_box_enter_grab_mode() -> void:
 	print("in grab mode")

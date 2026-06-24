@@ -25,12 +25,12 @@ metadata/_custom_type_script = "uid://dxftpm8o6ya47"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1669888046]
 shape = SubResource("RectangleShape2D_qlg0r")
 
-[node name="GrabberBox" type="Area2D" parent="." unique_id=2092789330]
+[node name="GrabberBox" type="Area2D" parent="." unique_id=1797301757]
+collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabberBox" unique_id=1504878255]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabberBox" unique_id=1982016511]
 shape = SubResource("RectangleShape2D_qhqgy")
-debug_color = Color(0.45650494, 0.21965066, 0.15956888, 0.91764706)
 
 [node name="HealthComponent" type="Node" parent="." unique_id=911432742]
 script = ExtResource("3_dqkch")

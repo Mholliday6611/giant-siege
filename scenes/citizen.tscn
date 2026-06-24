@@ -41,10 +41,11 @@ shape = SubResource("RectangleShape2D_a8kvq")
 script = ExtResource("3_0c1wn")
 metadata/_custom_type_script = "uid://yutairqi0jer"
 
-[node name="GrabBox" type="Area2D" parent="." unique_id=793652978]
+[node name="GrabBox" type="Area2D" parent="." unique_id=793652978 node_paths=PackedStringArray("actor")]
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("4_dxyr4")
+actor = NodePath("..")
 metadata/_custom_type_script = "uid://eyl5cjwlrry6"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabBox" unique_id=319052757]
