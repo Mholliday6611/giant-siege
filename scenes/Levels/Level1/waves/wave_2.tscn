@@ -3,13 +3,53 @@
 [ext_resource type="PackedScene" uid="uid://dd11vde02imou" path="res://scenes/enemy.tscn" id="1_g7bnk"]
 [ext_resource type="Script" uid="uid://cvyvem5j583wv" path="res://scripts/classes/wave.gd" id="1_qmh8p"]
 
+[sub_resource type="Curve2D" id="Curve2D_qmh8p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 157, 4, 0, 0, 0, 0, 45, 158, 0, 0, 0, 0, 202, 238, 0, 0, 0, 0, 328, 337, 0, 0, 0, 0, 87, 516, 0, 0, 0, 0, 235, 634, 0, 0, 0, 0, 257, 677)
+}
+point_count = 7
+
 [node name="Wave2" type="Node2D" unique_id=2136882068]
 script = ExtResource("1_qmh8p")
 metadata/_custom_type_script = "uid://cvyvem5j583wv"
 
 [node name="Enemies" type="Node" parent="." unique_id=2059945169]
 
-[node name="Enemy" parent="Enemies" unique_id=374857170 node_paths=PackedStringArray("path_node") instance=ExtResource("1_g7bnk")]
+[node name="Enemy2" parent="Enemies" unique_id=374857170 node_paths=PackedStringArray("path_node") instance=ExtResource("1_g7bnk")]
+position = Vector2(159, -113)
+SPEED = 3
+path_node = NodePath("../../Paths/Path2D")
+
+[node name="Enemy3" parent="Enemies" unique_id=1883350528 node_paths=PackedStringArray("path_node") instance=ExtResource("1_g7bnk")]
+position = Vector2(164, -212)
+SPEED = 2
+delay_time = 5
+path_node = NodePath("../../Paths/Path2D")
+
+[node name="Enemy4" parent="Enemies" unique_id=510414554 node_paths=PackedStringArray("path_node") instance=ExtResource("1_g7bnk")]
+position = Vector2(164, -294)
+SPEED = 2
+delay_time = 6
+path_node = NodePath("../../Paths/Path2D")
+
+[node name="Enemy5" parent="Enemies" unique_id=1305714819 node_paths=PackedStringArray("path_node") instance=ExtResource("1_g7bnk")]
+position = Vector2(299, -148)
+SPEED = 2
+delay_time = 4
+path_node = NodePath("../../Paths/Path2D")
+
+[node name="Enemy6" parent="Enemies" unique_id=1089651828 node_paths=PackedStringArray("path_node") instance=ExtResource("1_g7bnk")]
+position = Vector2(63, -163)
+SPEED = 2
+delay_time = 4
+path_node = NodePath("../../Paths/Path2D")
+
+[node name="Enemy" parent="Enemies" unique_id=2070015872 node_paths=PackedStringArray("path_node") instance=ExtResource("1_g7bnk")]
 position = Vector2(156, -15)
-SPEED = 1
-path_node = NodePath("")
+SPEED = 3
+path_node = NodePath("../../Paths/Path2D")
+
+[node name="Paths" type="Node" parent="." unique_id=1768333581]
+
+[node name="Path2D" type="Path2D" parent="Paths" unique_id=1025777990]
+curve = SubResource("Curve2D_qmh8p")

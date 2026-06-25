@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://b28hxys1y70a2"]
+
+[ext_resource type="Script" uid="uid://bqeq1axmn3b5x" path="res://scripts/level_start_ui.gd" id="1_ubxnp"]
+
+[sub_resource type="Animation" id="Animation_viv5o"]
+resource_name = "LevelStart"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LevelStartLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Ready?!", "Set!", "GO!"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ubxnp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LevelStartLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Ready?!"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fvd3o"]
+_data = {
+&"LevelStart": SubResource("Animation_viv5o"),
+&"RESET": SubResource("Animation_ubxnp")
+}
+
+[node name="LevelStartUI" type="CenterContainer" unique_id=906669044]
+visible = false
+offset_right = 360.0
+offset_bottom = 640.0
+size_flags_vertical = 4
+script = ExtResource("1_ubxnp")
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelStartLabel" type="Label" parent="." unique_id=1308162642]
+layout_mode = 2
+text = "Ready?!"
+
+[node name="LevelStartAnimator" type="AnimationPlayer" parent="." unique_id=1505358841]
+libraries/ = SubResource("AnimationLibrary_fvd3o")
+autoplay = &"LevelStart"
+
+[connection signal="animation_finished" from="LevelStartAnimator" to="." method="_on_level_start_animator_animation_finished"]

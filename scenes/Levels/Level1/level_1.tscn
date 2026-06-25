@@ -1,15 +1,8 @@
 [gd_scene format=3 uid="uid://cqvtf7iahw6pd"]
 
 [ext_resource type="PackedScene" uid="uid://o0j36srxjy86" path="res://scenes/game_world.tscn" id="1_dcdww"]
-[ext_resource type="PackedScene" uid="uid://tyefx43gyss4" path="res://scenes/citizen.tscn" id="2_k7a52"]
 
 [node name="Level1" type="Node2D" unique_id=406393790]
 
 [node name="GameWorld" parent="." unique_id=404435621 instance=ExtResource("1_dcdww")]
 waves = 2
-
-[node name="Citizen" parent="." unique_id=1736395255 instance=ExtResource("2_k7a52")]
-position = Vector2(112, 306)
-
-[node name="Citizen2" parent="." unique_id=2124501810 instance=ExtResource("2_k7a52")]
-position = Vector2(229, 389)

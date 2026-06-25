@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ul77pyca3bmt" path="res://scripts/game_world.gd" id="1_ywgp6"]
 [ext_resource type="PackedScene" uid="uid://e27ubdi7p8sy" path="res://scenes/enemy_spawner.tscn" id="2_47u71"]
 [ext_resource type="Script" uid="uid://c0dbg1addncgt" path="res://scripts/classes/multi_type_button.gd" id="4_0vfqx"]
+[ext_resource type="PackedScene" uid="uid://b28hxys1y70a2" path="res://scenes/level_start_ui.tscn" id="5_wbbl4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywgp6"]
 size = Vector2(250, 60)
@@ -41,4 +42,7 @@ text = "Reset Game"
 script = ExtResource("4_0vfqx")
 metadata/_custom_type_script = "uid://c0dbg1addncgt"
 
+[node name="LevelStartUI" parent="." unique_id=906669044 instance=ExtResource("5_wbbl4")]
+
 [connection signal="pressed" from="GamveOverUI/Button" to="." method="_on_button_pressed"]
+[connection signal="level_start_animation_finished" from="LevelStartUI" to="." method="_on_level_start_ui_level_start_animation_finished"]
