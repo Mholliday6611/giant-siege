@@ -5,4 +5,4 @@
 [node name="Level1" type="Node2D" unique_id=406393790]
 
 [node name="GameWorld" parent="." unique_id=404435621 instance=ExtResource("1_dcdww")]
-waves = 2
+waves = 1

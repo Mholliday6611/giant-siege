@@ -37,6 +37,9 @@ func _physics_process(delta: float) -> void:
 			if global_position.distance_to(target_pos) < 10.0:
 				current_point_index += 1
 
+func _on_health_component_damage_received() -> void:
+	handle_knockback()
+
 func _on_health_component_died() -> void:
 	print(died)
 	died.emit()
@@ -47,3 +50,6 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		print(died)
 		died.emit()
 		queue_free()
+
+func handle_knockback() -> void:
+	position.y -= 10

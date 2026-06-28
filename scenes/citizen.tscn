@@ -1,37 +1,29 @@
 [gd_scene format=3 uid="uid://tyefx43gyss4"]
 
 [ext_resource type="Script" uid="uid://csk1pnelj4u1n" path="res://scripts/citizen.gd" id="1_ae6px"]
+[ext_resource type="Texture2D" uid="uid://cu71mv3ufp12i" path="res://icon.svg" id="2_0c1wn"]
 [ext_resource type="Script" uid="uid://dxftpm8o6ya47" path="res://scripts/classes/hurtbox.gd" id="2_dxyr4"]
 [ext_resource type="Script" uid="uid://yutairqi0jer" path="res://scripts/components/health_component.gd" id="3_0c1wn"]
 [ext_resource type="Script" uid="uid://eyl5cjwlrry6" path="res://scripts/classes/grab_box.gd" id="4_dxyr4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8kvq"]
-size = Vector2(32, 32)
+size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0c1wn"]
-size = Vector2(33, 32)
+size = Vector2(64, 64)
 
 [node name="Citizen" type="Node2D" unique_id=1736395255]
 script = ExtResource("1_ae6px")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=489691395]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.12941177, 0.8156863, 0.4, 1)
+[node name="ColorRect" type="Sprite2D" parent="." unique_id=1888533827]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0c1wn")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=934198007 node_paths=PackedStringArray("health_component")]
 collision_mask = 2
 script = ExtResource("2_dxyr4")
 health_component = NodePath("../HealthComponent")
+is_enemy = false
 metadata/_custom_type_script = "uid://dxftpm8o6ya47"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=2112320528]
