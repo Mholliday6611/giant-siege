@@ -10,32 +10,32 @@ metadata/_custom_type_script = "uid://cvyvem5j583wv"
 [node name="Enemies" type="Node" parent="." unique_id=87890856]
 
 [node name="Enemy" parent="Enemies" unique_id=374857170 instance=ExtResource("2_mqc0x")]
-position = Vector2(183, 340)
+position = Vector2(185, -35)
 SPEED = 1
 
 [node name="Enemy2" parent="Enemies" unique_id=1153591023 instance=ExtResource("2_mqc0x")]
-position = Vector2(114, 279)
+position = Vector2(116, -96)
 SPEED = 1
 
 [node name="Enemy3" parent="Enemies" unique_id=628470002 instance=ExtResource("2_mqc0x")]
-position = Vector2(254, 275)
+position = Vector2(256, -100)
 SPEED = 1
 
 [node name="Enemy4" parent="Enemies" unique_id=1946995858 instance=ExtResource("2_mqc0x")]
-position = Vector2(155, 197)
+position = Vector2(157, -178)
 SPEED = 1
 
 [node name="Enemy5" parent="Enemies" unique_id=1395031394 instance=ExtResource("2_mqc0x")]
-position = Vector2(222, 197)
+position = Vector2(224, -178)
 SPEED = 1
 delay_time = 3
 
 [node name="Enemy6" parent="Enemies" unique_id=755035717 instance=ExtResource("2_mqc0x")]
-position = Vector2(56, 165)
+position = Vector2(58, -210)
 SPEED = 1
 delay_time = 3
 
 [node name="Enemy7" parent="Enemies" unique_id=251935540 instance=ExtResource("2_mqc0x")]
-position = Vector2(297, 167)
+position = Vector2(299, -208)
 SPEED = 1
 delay_time = 3
